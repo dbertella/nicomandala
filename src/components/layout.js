@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
           </a>{" "}
           | 💰{" "}
           <a
-            href="https://www.etsy.com/it/listing/764558451/mandala-in-liberta-libro-di-mandala-yes"
+            href="https://www.etsy.com/it/shop/nicoproduction"
             target="_blank"
             rel="noopener noreferrer"
           >
