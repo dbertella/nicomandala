@@ -38,8 +38,19 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, 📷{" "}
-          <a href="https://www.instagram.com/nico.mandala" target="_blank" rel="noopener noreferrer">@nico.mandala</a> |{" "}
-          <a href="https://www.etsy.com/it/listing/764558451/mandala-in-liberta-libro-di-mandala-yes" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com/nico.mandala"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @nico.mandala
+          </a>{" "}
+          | 💰{" "}
+          <a
+            href="https://www.etsy.com/it/listing/764558451/mandala-in-liberta-libro-di-mandala-yes"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Sostieni il progetto
           </a>
         </footer>
