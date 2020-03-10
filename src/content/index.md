@@ -1,14 +1,8 @@
 ---
 title: Mandala in libertà
-path: /
+path: /mandala-da-scaricare
 ---
 
 Un libro di Nicola Bruni.
 
-Ecco una pagina da scaricare e colorare
-
----
-
-![mandala da scaricare](../images/mandala_da_scaricare.jpg)
-
----
+![mandala da scaricare](../images/mandala-da-scaricare.jpg)

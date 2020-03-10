@@ -4,14 +4,15 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 
 export const FullWidth = styled(Img)`
-  width: 100%;
-  margin: 0;
+  max-width: 100%;
+  width: 1200px;
+  margin: 0 auto;
 `
 
 const FullWidthImg = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "cover.png" }) {
+      file(relativePath: { eq: "copertina-mandala-per-sito.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid

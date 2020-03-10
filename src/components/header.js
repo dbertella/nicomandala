@@ -1,5 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
@@ -18,9 +17,10 @@ const Wrapper = styled.header`
   padding: 1.5rem;
 `
 
-const Logo = styled.div`
+const Logo = styled(Link)`
   display: flex;
   align-items: center;
+  text-decoration: none;
   * {
     margin-right: 1rem;
   }
