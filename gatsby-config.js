@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Mandala in libertà`,
+    title: `🌵Mandala in libertà`,
     description: `Mandala in libertà - Nicola Bruni`,
     author: `@nico.mandala`,
   },
