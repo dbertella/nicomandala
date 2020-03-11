@@ -11,16 +11,17 @@ const H2 = styled.h2`
 const Wrapper = styled.header`
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   color: #669253;
-  padding: 0.5rem 1.5rem;
+  margin-top: 0.5rem;
 `
 
-const Flex = styled(Link)`
+const Flex = styled.div`
   display: flex;
   align-items: center;
   text-decoration: none;
+  line-height: 1;
   * {
     margin-right: 0.5rem;
   }
@@ -41,30 +42,31 @@ const Header = () => {
 
   return (
     <Wrapper>
-      <Flex>
+      <Flex as={Link} to="/">
         <Img fixed={data.file.childImageSharp.fixed} />
         <H2>nico.mandala</H2>
       </Flex>
       <Flex>
         <a
           className="navbar-item"
-          href="https://www.etsy.com/it/shop/nicoproduction"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <Etsy />
-          </span>
-        </a>
-        <a
-          className="navbar-item"
           href="https://www.instagram.com/nico.mandala/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className="icon">
-            <Instagram />
-          </span>
+          <Instagram />
+        </a>
+        <a
+          className="navbar-item"
+          href="https://www.etsy.com/it/shop/nicoproduction"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Etsy
+            style={{
+              position: "relative",
+              top: "2px",
+            }}
+          />
         </a>
       </Flex>
     </Wrapper>
