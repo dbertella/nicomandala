@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Header from "../components/header"
 
 const Page = styled.div`
   text-align: center;
@@ -28,6 +29,7 @@ export default function Template({ data }) {
   return (
     <Layout>
       <SEO title="Home" />
+      <Header />
       <H1>{frontmatter.title}</H1>
       <div className="blog-post">
         <Page dangerouslySetInnerHTML={{ __html: html }} />

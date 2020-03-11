@@ -3,6 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Instagram } from "./Instagram"
+import { Etsy } from "./Etsy"
 
 const H2 = styled.h2`
   margin: 0;
@@ -16,19 +17,19 @@ const Wrapper = styled.header`
   padding: 0.5rem 1.5rem;
 `
 
-const Logo = styled(Link)`
+const Flex = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
   * {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
 `
 
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "icon.jpg" }) {
+      file(relativePath: { eq: "mandala.png" }) {
         childImageSharp {
           fixed(width: 80, height: 80) {
             ...GatsbyImageSharpFixed
@@ -40,20 +41,32 @@ const Header = () => {
 
   return (
     <Wrapper>
-      <Logo>
+      <Flex>
         <Img fixed={data.file.childImageSharp.fixed} />
         <H2>nico.mandala</H2>
-      </Logo>
-      <a
-        className="navbar-item"
-        href="https://www.instagram.com/nico.mandala/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span className="icon">
-          <Instagram />
-        </span>
-      </a>
+      </Flex>
+      <Flex>
+        <a
+          className="navbar-item"
+          href="https://www.etsy.com/it/shop/nicoproduction"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="icon">
+            <Etsy />
+          </span>
+        </a>
+        <a
+          className="navbar-item"
+          href="https://www.instagram.com/nico.mandala/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="icon">
+            <Instagram />
+          </span>
+        </a>
+      </Flex>
     </Wrapper>
   )
 }
