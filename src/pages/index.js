@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import FullWidthImg from "../components/FullWidthImg"
+import CoverImg from "../components/Cover"
 import { Instagram } from "../components/Instagram"
 import { Etsy } from "../components/Etsy"
 import { Download } from "../components/Download"
@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <Layout>
       <SEO title="Home" />
-      <FullWidthImg />
+      <CoverImg />
       <ButtonWrapper>
         <ExternalLink
           href="https://www.instagram.com/nico.mandala"

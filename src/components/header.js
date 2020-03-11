@@ -13,8 +13,7 @@ const Wrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   color: #669253;
-  background: #fdf9f0;
-  padding: 1.5rem;
+  padding: 0.5rem 1.5rem;
 `
 
 const Logo = styled(Link)`
