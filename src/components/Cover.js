@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 
 export const Cover = styled(Img)`
-  max-width: 100%;
+  width: 1200px;
 `
 
 const Flex = styled.div`
@@ -17,8 +17,8 @@ const CoverImg = () => {
     query {
       file(relativePath: { eq: "copertina-mandala-per-sito.jpg" }) {
         childImageSharp {
-          fixed(width: 1200, height: 848) {
-            ...GatsbyImageSharpFixed
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -26,7 +26,7 @@ const CoverImg = () => {
   `)
   return (
     <Flex>
-      <Cover fixed={data.file.childImageSharp.fixed} />
+      <Cover fluid={data.file.childImageSharp.fluid} />
     </Flex>
   )
 }
