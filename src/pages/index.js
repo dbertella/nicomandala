@@ -7,6 +7,7 @@ import { Instagram } from "../components/Instagram"
 import { Etsy } from "../components/Etsy"
 import { Download } from "../components/Download"
 import pdf from "../images/mandala-da-scaricare.pdf"
+import { OutboundLink, trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ const ButtonWrapper = styled.div`
   }
 `
 
-const ExternalLink = styled.a`
+const ExternalLink = styled(OutboundLink)`
   display: flex;
   align-items: center;
   margin-top: 2rem;
@@ -26,13 +27,29 @@ const ExternalLink = styled.a`
   font-family: "Amatic SC";
   font-weight: 700;
   font-size: 1.5rem;
-  cursor: pointer;
   * + * {
     margin-left: 0.5rem;
   }
 `
 
+const PdfButton = styled.button`
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #669253;
+`
+
 const printPdf = () => {
+  trackCustomEvent({
+    // string - required - The object that was interacted with (e.g.video)
+    category: "Print button",
+    // string - required - Type of interaction (e.g. 'play')
+    action: "Click",
+    // string - optional - Useful for categorizing events (e.g. 'Spring Campaign')
+    label: "Il pdf è stato scaricato",
+    // number - optional - Numeric value associated with the event. (e.g. A product ID)
+    value: 10,
+  })
   const w = window.open(pdf)
   w.print()
 }
@@ -59,7 +76,7 @@ export default function Home() {
           <Etsy />
           <span>Sostieni il progetto</span>
         </ExternalLink>
-        <ExternalLink onClick={printPdf}>
+        <ExternalLink as={PdfButton} onClick={printPdf}>
           <Download />
           <span>Mandala da colorare</span>
         </ExternalLink>
