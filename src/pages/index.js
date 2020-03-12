@@ -39,7 +39,8 @@ const PdfButton = styled.button`
   color: #669253;
 `
 
-const printPdf = () => {
+const printPdf = e => {
+  e.preventDefault()
   trackCustomEvent({
     // string - required - The object that was interacted with (e.g.video)
     category: "Print button",
