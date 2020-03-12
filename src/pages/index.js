@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -7,6 +6,7 @@ import CoverImg from "../components/Cover"
 import { Instagram } from "../components/Instagram"
 import { Etsy } from "../components/Etsy"
 import { Download } from "../components/Download"
+import pdf from "../images/mandala-da-scaricare.pdf"
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -26,10 +26,16 @@ const ExternalLink = styled.a`
   font-family: "Amatic SC";
   font-weight: 700;
   font-size: 1.5rem;
+  cursor: pointer;
   * + * {
     margin-left: 0.5rem;
   }
 `
+
+const printPdf = () => {
+  const w = window.open(pdf)
+  w.print()
+}
 
 export default function Home() {
   return (
@@ -53,10 +59,7 @@ export default function Home() {
           <Etsy />
           <span>Sostieni il progetto</span>
         </ExternalLink>
-        <ExternalLink
-          as={Link}
-          to="/mandala-da-scaricare"
-        >
+        <ExternalLink onClick={printPdf}>
           <Download />
           <span>Mandala da colorare</span>
         </ExternalLink>
